@@ -24,7 +24,7 @@ function App() {
   const [popperContent, setPopperContent] = React.useState(null);
   const hoverElem = (elem, region) => {
     elem.addEventListener("mouseover", () => {
-      setPopperContent(<div><div>Всего: {region.sick}</div> {region.description}</div>);
+      setPopperContent(<div><div>{region.name}</div><div>Всего: {region.sick}</div> {region.description}</div>);
       createPopper(elem, popperElement, {
         placement: 'top',
         modifiers: [
