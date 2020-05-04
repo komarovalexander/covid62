@@ -1,6 +1,7 @@
 export const data = [{
   date: new Date(2020, 4, 4),
-  source: "https://www.ryazangov.ru/governmentro/covid-19/?ELEMENT_ID=1058139",
+  source: "https://www.ryazangov.ru/governmentro/covid-19/?ELEMENT_ID=1060157",
+  all:1226,
   regions: [{
     id: "miloslavskoe",
     name: "Милославский р-он",
@@ -136,6 +137,7 @@ export const data = [{
 {
   date: new Date(2020, 4, 3),
   source: "https://www.ryazangov.ru/governmentro/covid-19/?ELEMENT_ID=1058139",
+  all: 1137,
   regions: [{
     id: "miloslavskoe",
     name: "Милославский р-он",
