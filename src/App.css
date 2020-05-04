@@ -1,8 +1,29 @@
 
 .tooltip {
   background-color: white;
+  position: absolute;
   color: black;
   width: 300px;
   padding: 1px 20px;
   font-size: 14px;
+}
+.tooltip-content {
+  position: relative;
+}
+.tooltip button {
+  right: 10px;
+  top: 17px;
+  position: absolute;
+}
+
+body{
+  padding: 10px;
+}
+
+.rzn-map{
+  display: flex;
+}
+
+.rzn-map svg {
+  width: 800px;
 }
