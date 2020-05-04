@@ -5,10 +5,11 @@ import { createPopper } from '@popperjs/core';
 import { data } from './data';
 
 const firstData = data[0];
+const secondData = data[1];
 const regions = firstData.regions;
 
 var maxCount = regions.reduce((acc, item) => item.id !== "ryazan" && item.sick > acc ? item.sick : acc,0);
-var allSick = regions.reduce((acc, item) => item.sick + acc,0);
+//var allSick = regions.reduce((acc, item) => item.sick + acc,0);
 for (var i=0; i<regions.length; i++){
   const region = regions[i];
   region.opacity = (region.sick / maxCount);
@@ -47,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <p>Последнее обновление: {firstData.date.toLocaleDateString()}</p>
-      <p>Всего заразившихся: {allSick} - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
+      <p>Всего заразившихся: {firstData.all} (+{firstData.all-secondData.all} за последние сутки) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
       <div className="rzn-map">
         <SvgLoader path="./Ryazan_Oblast.svg">
           {regions.map(r=> <SvgProxy key={r.id} selector={"#"+r.id} fill={`rgba(${r.id === "ryazan" ? '140' : '180'}, 0, 0, ${r.opacity})`} onElementSelected={(elem)=> hoverElem(elem, r)}></SvgProxy>)}
