@@ -1,18 +1,18 @@
 
 .tooltip {
+}
+.tooltip-content {
+  position: relative;
   background-color: white;
-  position: absolute;
   color: black;
   width: 300px;
   padding: 1px 20px;
   font-size: 14px;
 }
-.tooltip-content {
-  position: relative;
-}
+
 .tooltip button {
-  right: 10px;
-  top: 0;
+  right: 20px;
+  top: 18px;
   position: absolute;
 }
 
