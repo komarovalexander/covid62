@@ -1,7 +1,6 @@
 {
   "name": "covid62",
   "version": "0.1.0",
-  "private": true,
   "homepage": "http://covid62.ru",
   "dependencies": {
     "@popperjs/core": "^2.4.0",
