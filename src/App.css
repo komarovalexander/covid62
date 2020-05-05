@@ -22,12 +22,13 @@ body{
 
 .rzn-map{
   display: flex;
-  height: 800px;
+  max-height: 800px;
   margin-right: 40px;
 }
 
 .rzn-map svg {
   width: 800px;
+  max-height: 800px;
 }
 
 .ka-tbody{
