@@ -22,8 +22,24 @@ body{
 
 .rzn-map{
   display: flex;
+  height: 800px;
+  margin-right: 40px;
 }
 
 .rzn-map svg {
   width: 800px;
+}
+
+.ka-tbody{
+  max-height: 800px;
+}
+
+.map-table{
+  display: flex;
+}
+
+@media(max-width: 1800px){  
+  .map-table{
+    display: block;
+  }
 }
