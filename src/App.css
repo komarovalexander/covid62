@@ -31,6 +31,7 @@ body{
   max-height: 800px;
 }
 
+
 .ka-tbody{
   max-height: 800px;
 }
@@ -42,5 +43,8 @@ body{
 @media(max-width: 1800px){  
   .map-table{
     display: block;
+  }
+  .ka-table{
+    margin: 20px 0;
   }
 }
