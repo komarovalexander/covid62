@@ -22,6 +22,7 @@ body{
 
 .rzn-map{
   display: flex;
+  max-width: 800px;
   max-height: 800px;
   margin-right: 40px;
 }

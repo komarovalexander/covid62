@@ -17,7 +17,7 @@ for (var i = 0; i<regions.length; i++){
 function App() {  
   return (
     <div className="App">
-      <p>Всего заразившихся:<b>{firstData.all}</b>(+{firstData.all-secondData.all} за последние сутки) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
+      <p>Всего заразившихся:<b> {firstData.all} </b>(+{firstData.all-secondData.all} за последние сутки) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
       <div className='map-table'>
         <Map regions={regions}/>
         <CovidTable regions={regions}/>

@@ -8,10 +8,14 @@ function Map({ regions }) {
   const maxCount = regions.reduce((acc, item) => item.id !== "ryazan" && item.sick > acc ? item.sick : acc,0);
   const [popperElement, setPopperElement] = React.useState(null);
   const [popperContent, setPopperContent] = React.useState(null);
+  const closePoper=()=> {
+    popper.destroy(); 
+    setPopperContent(<></>);
+  };
   const hoverElem = (elem, region) => {
     elem.addEventListener("mouseover", () => {
       setPopperContent(<div className="tooltip-content">
-        <h4>{region.name}</h4> <button onClick={()=> {popper.destroy(); setPopperContent(<></>)}}>Закрыть</button>
+        <h4>{region.name}</h4>
         <p>Всего: <b>{region.sick}</b></p>
         <p>{region.description}</p>
       </div>);
@@ -29,7 +33,7 @@ function Map({ regions }) {
      });
   }
   return (
-    <div className="rzn-map">
+    <div className="rzn-map" onMouseLeave = {()=> {closePoper()}}>
       <SvgLoader path="./Ryazan_Oblast.svg">
         {regions.map(r=> {
           let opacity = (r.sick / maxCount);
