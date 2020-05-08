@@ -15,7 +15,7 @@ function Map({ regions }) {
   const hoverElem = (elem, region) => {
     elem.addEventListener("mouseover", () => {
       setPopperContent(<div className="tooltip-content">
-        <h4>{region.name}</h4>
+        <h4>{region.name}</h4><img src='close.svg'  onClick={()=> {closePoper()}}></img>
         <p>Всего: <b>{region.sick}</b></p>
         <p>{region.description}</p>
       </div>);
