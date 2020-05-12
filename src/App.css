@@ -45,6 +45,9 @@ body{
   align-items: flex-start;
   margin-top: 40px;
 }
+.day-buttons{
+  display: inline-block;
+}
 
 @media(max-width: 1800px){
   .map-table{
@@ -52,5 +55,11 @@ body{
   }
   .ka-table{
     margin: 40px 0;
+  }
+}
+
+@media(max-width: 700px){
+  .day-buttons{
+    display: block;
   }
 }

@@ -27,8 +27,10 @@ function App() {
     <div className="App">
       <p>
         <span className={'date'}>Дата: <b>{firstData.date.toLocaleDateString()}</b></span>
-        <button onClick={() => setDataIndex(dataIndex + 1)} disabled={dataIndex >= data.length -2}>Предыдущий день</button>
-        <button onClick={() => setDataIndex(dataIndex - 1)} disabled={dataIndex === 0}>Следующий день</button>
+        <span className="day-buttons">
+          <button className="day" onClick={() => setDataIndex(dataIndex + 1)} disabled={dataIndex >= data.length -2}>Предыдущий день</button>
+          <button className="day" onClick={() => setDataIndex(dataIndex - 1)} disabled={dataIndex === 0}>Следующий день</button>
+        </span>
       </p>
       <p>Всего заразившихся:<b> {firstData.all} </b>(+{firstData.all-secondData.all} за последние сутки{weekData && `, +${firstData.all-weekData.all} за последнюю неделю`}) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
       <div className='map-table'>

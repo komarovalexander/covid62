@@ -15,7 +15,7 @@ const tablePropsInit = {
     { key: 'name', title: 'Регион', dataType: DataType.String, style: {width: 150} },
     { key: 'sick', title: 'Зараженные', dataType: DataType.Number, style: {width: 90}, sortDirection: 'descend' },
     { key: 'lastDaySick', title: 'За сутки', dataType: DataType.Number, format: (value)=> value === 0 ? '' : `(+${value})`, style: {width: 80} },
-    { key: 'lastWeekSick', title: 'За неделю', dataType: DataType.Number, format: (value)=> !value ? 'нет данных' : `(+${value})`, style: {width: 80} },
+    { key: 'lastWeekSick', title: 'За неделю', dataType: DataType.Number, format: (value)=> !value ? '' : `(+${value})`, style: {width: 80} },
     { key: 'description', title: 'Доп. Инфо', dataType: DataType.String, style: {width: 400}, cell: (props) => <Button {...props}/> },
   ],
   rowKeyField: 'id',
