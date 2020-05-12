@@ -42,6 +42,8 @@ body{
 
 .map-table{
   display: flex;
+  align-items: flex-start;
+  margin-top: 40px;
 }
 
 @media(max-width: 1800px){
@@ -49,6 +51,6 @@ body{
     display: block;
   }
   .ka-table{
-    margin: 20px 0;
+    margin: 40px 0;
   }
 }
