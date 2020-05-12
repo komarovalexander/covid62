@@ -23,7 +23,6 @@ function App() {
     }
     item.lastDaySick = item.sick - secondItem.sick;
   }
-
   return (
     <div className="App">
       <p>
