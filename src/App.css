@@ -1,6 +1,9 @@
 
 .tooltip {
 }
+.date{
+  margin-right: 20px;
+}
 .tooltip-content {
   position: relative;
   background-color: white;
@@ -41,7 +44,7 @@ body{
   display: flex;
 }
 
-@media(max-width: 1800px){  
+@media(max-width: 1800px){
   .map-table{
     display: block;
   }

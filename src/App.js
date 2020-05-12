@@ -1,28 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { data } from './data';
 import Map from './Map';
 import CovidTable from './CovidTable';
 
-const firstData = data[0];
-const secondData = data[1];
-const regions = firstData.regions;
+const maxCount =  data[0].regions.reduce((acc, item) => item.id !== "ryazan" && item.sick > acc ? item.sick : acc,0);
 
-for (var i = 0; i<regions.length; i++){
-  var item = regions[i];
-  var secondItem = secondData.regions.find(d=> d.id === item.id);
-  item.lastDaySick = item.sick - secondItem.sick;
-}
+function App() {
+  const [dataIndex, setDataIndex] = useState(0);
+  const firstData = data[dataIndex];
+  const secondData = data[dataIndex + 1];
+  const weekData = data[dataIndex + 7];
+  const regions = firstData.regions;
 
-function App() {  
+  for (var i = 0; i<regions.length; i++){
+    const item = regions[i];
+    const secondItem = secondData.regions.find(d=> d.id === item.id);
+
+    if(dataIndex < data.length - 7){
+      const weekItem = weekData.regions.find(d=> d.id === item.id);
+      item.lastWeekSick = item.sick - weekItem.sick;
+    }
+    item.lastDaySick = item.sick - secondItem.sick;
+  }
+
   return (
     <div className="App">
-      <p>Всего заразившихся:<b> {firstData.all} </b>(+{firstData.all-secondData.all} за последние сутки) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
+      <p>
+        <span className={'date'}>Дата: <b>{firstData.date.toLocaleDateString()}</b></span>
+        <button onClick={() => setDataIndex(dataIndex + 1)} disabled={dataIndex >= data.length -2}>Предыдущий день</button>
+        <button onClick={() => setDataIndex(dataIndex - 1)} disabled={dataIndex === 0}>Следующий день</button>
+      </p>
+      <p>Всего заразившихся:<b> {firstData.all} </b>(+{firstData.all-secondData.all} за последние сутки{weekData && `, +${firstData.all-weekData.all} за последнюю неделю`}) - <a href={firstData.source} target="_blank" rel="noopener noreferrer">Источник</a></p>
       <div className='map-table'>
-        <Map regions={regions}/>
+        <Map regions={regions} maxCount={maxCount}/>
         <CovidTable regions={regions}/>
       </div>
-      <p>*Последнее обновление: {firstData.date.toLocaleDateString()}</p>
     </div>
   );
 }
