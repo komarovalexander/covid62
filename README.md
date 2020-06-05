@@ -1,1 +1,1 @@
-[covid62.ru](http://covid62.ru)
+[covid62.ru](https://covid62.ru)
