@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "gulp": "^4.0.2",
     "gulp-gh-pages": "^0.5.4",
-    "ka-table": "^3.4.1",
+    "ka-table": "^3.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
