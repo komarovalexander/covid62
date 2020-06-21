@@ -136,7 +136,7 @@ export const data = [{
 }, {
   date: new Date(2020, 5, 20),
   source: "https://www.ryazangov.ru/governmentro/covid-19/?ELEMENT_ID=1141281",
-  all: 4759,
+  all: 4808,
   regions: [{
     id: "miloslavskoe",
     name: "Милославский район",
