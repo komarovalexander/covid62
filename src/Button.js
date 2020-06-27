@@ -1,7 +1,22 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { hideDetailsRow, showDetailsRow } from 'ka-table/actionCreators';
 
-export default function Button({value}){
-    const [clicked, click] = useState(false);
-    return clicked ? <>{value}</> : value && <button onClick={() => click(true)}>Показать инфо по району</button>;
-  }
+const DetailsButton = ({
+  dispatch,
+  rowKeyValue,
+  rowData,
+  isDetailsRowShown,
+}) => {
+  if(rowData.description)
+    return (
+      <button onClick={() => {
+        dispatch(isDetailsRowShown ? hideDetailsRow(rowKeyValue) : showDetailsRow(rowKeyValue));
+      }}>
+        {isDetailsRowShown ? 'Скрыть' : 'Показать'} инфо
+      </button>
+    );
+  return <> </>;
+};
+
+export default DetailsButton;

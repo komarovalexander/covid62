@@ -35,11 +35,6 @@ body{
   max-height: 800px;
 }
 
-
-.ka-tbody{
-  max-height: 800px;
-}
-
 .map-table{
   display: flex;
   align-items: flex-start;
